@@ -65,6 +65,8 @@ public abstract class Transport {
         return Objects.hash(brand, model, engineVolume);
     }
 
+    public abstract void printType();
+
     public abstract void startMoving();
 
     public abstract void stopMoving();
