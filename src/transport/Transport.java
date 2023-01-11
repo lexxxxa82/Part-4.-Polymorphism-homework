@@ -76,4 +76,17 @@ public abstract class Transport {
     public abstract void getBestLapTime();
 
     public abstract void getMaximumSpeed();
+
+    public abstract void diagnosticsPass();
+
+    public static void performDiagnostics(Transport... transports) {
+        for (Transport transport : transports) {
+            try {
+                transport.diagnosticsPass();
+            } catch (UnsupportedOperationException e) {
+                System.out.println("ошибка");
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 }
