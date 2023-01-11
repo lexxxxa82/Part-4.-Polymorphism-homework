@@ -1,10 +1,29 @@
 package transport;
 
 public class Car extends Transport implements Competition {
+    private BodyType bodyType;
 
 
-    public Car(String brand, String model, double engineVolume) {
+    public Car(String brand, String model, double engineVolume, BodyType bodyType) {
         super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+    }
+
+    @Override
+    public void printType() {
+        if (bodyType == null) {
+            System.out.println("не введен тип кузова");
+        } else {
+            System.out.println(bodyType);
+        }
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override
@@ -35,4 +54,5 @@ public class Car extends Transport implements Competition {
         System.out.println("максимальная скорость");
 
     }
+
 }
