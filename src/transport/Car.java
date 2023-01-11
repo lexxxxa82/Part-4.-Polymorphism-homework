@@ -3,8 +3,13 @@ package transport;
 public class Car extends Transport implements Competition {
 
 
-    public Car(String brand, String model, double engineVolume) {
+    public Car(String brand, String model, double engineVolume, BodyType bodyTypeSedan) {
         super(brand, model, engineVolume);
+    }
+
+    @Override
+    public void printType() {
+
     }
 
     @Override
