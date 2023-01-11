@@ -1,15 +1,16 @@
 package Driver;
 
+import exception.CarLicenseException;
 import transport.Competition;
 import transport.Transport;
 
 public class DriverB<T extends Transport & Competition> extends Driver {
 
-    public DriverB() {
+    public DriverB() throws CarLicenseException {
         super("", true, 0);
     }
 
-    public DriverB(String fullName, boolean driversLicence, int drivingExperience) {
+    public DriverB(String fullName, boolean driversLicence, int drivingExperience) throws CarLicenseException {
         super(fullName, driversLicence, drivingExperience);
     }
 

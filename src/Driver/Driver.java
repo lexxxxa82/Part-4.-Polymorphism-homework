@@ -1,5 +1,9 @@
 package Driver;
 
+
+
+import exception.CarLicenseException;
+
 import java.util.Objects;
 
 public abstract class Driver {
@@ -7,13 +11,19 @@ public abstract class Driver {
     private boolean driversLicence;
     private int drivingExperience;
 
-    public Driver(String fullName, boolean driversLicence, int drivingExperience) {
+    public Driver(String fullName, boolean driversLicence, int drivingExperience)throws CarLicenseException {
         if (fullName == null || fullName.isEmpty()) {
             this.fullName = "Ф.И.О.";
         } else {
             this.fullName = fullName;
         }
-        this.driversLicence = driversLicence;
+        if (driversLicence==true) {
+            this.driversLicence = true;
+        }else {
+            throw new CarLicenseException(this,"без прав управлять автомобилем нельзя");
+        }
+
+
         if (drivingExperience <= 0) {
             this.drivingExperience = 1;
         } else {
@@ -33,12 +43,16 @@ public abstract class Driver {
         }
     }
 
-    public boolean isDriversLicence() {
+    public boolean getDriversLicence() {
         return driversLicence;
     }
 
-    public void setDriversLicence(boolean driversLicence) {
-        this.driversLicence = driversLicence;
+    public void setDriversLicence(boolean driversLicence)throws CarLicenseException{
+        if (driversLicence==true) {
+            this.driversLicence = true;
+        }else {
+            throw new CarLicenseException(this,"без прав управлять автомобилем нельзя");
+        }
     }
 
     public int getDrivingExperience() {
@@ -61,8 +75,8 @@ public abstract class Driver {
 
     @Override
     public String toString() {
-        return "Ф.И.О." + fullName + ",количество водительских прав " + driversLicence +
-                ", стаж вождения" + drivingExperience;
+        return "Ф.И.О." + fullName + ",наличие водительских прав " + driversLicence +
+                ", стаж вождения " + drivingExperience;
     }
 
     @Override
