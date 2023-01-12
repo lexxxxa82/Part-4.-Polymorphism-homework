@@ -1,12 +1,8 @@
-import Driver.Driver;
 import Driver.DriverB;
 import Driver.DriverC;
 import Driver.DriverD;
-
 import exception.CarLicenseException;
 import transport.*;
-
-import static transport.Transport.performDiagnostics;
 
 public class Main {
     public static void main(String[] args) throws CarLicenseException {
