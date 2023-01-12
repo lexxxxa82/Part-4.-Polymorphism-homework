@@ -1,6 +1,5 @@
 package Driver;
 
-
 import exception.CarLicenseException;
 
 import java.util.Objects;
@@ -9,8 +8,10 @@ public abstract class Driver {
     private String fullName;
     private boolean driversLicence;
     private int drivingExperience;
+    private String category;
 
-    public Driver(String fullName, boolean driversLicence, int drivingExperience) throws CarLicenseException {
+    public Driver(String fullName, boolean driversLicence, int drivingExperience,
+                  String category) throws CarLicenseException {
         if (fullName == null || fullName.isEmpty()) {
             this.fullName = "Ф.И.О.";
         } else {
@@ -22,13 +23,30 @@ public abstract class Driver {
             throw new CarLicenseException(this, "без прав управлять автомобилем нельзя");
         }
 
-
         if (drivingExperience <= 0) {
             this.drivingExperience = 1;
         } else {
             this.drivingExperience = drivingExperience;
         }
+        if (category == null || category.isEmpty()) {
+            try {
+                throw new DriversLicenceException("Необходимо указать категорию водительского удостоверения" +
+                        " для водителя " + getFullName());
+            } catch (DriversLicenceException e) {
+                System.out.println(e.getMessage());
+            }
+        } else if (category.equals("B") || category.equals("C") || category.equals("D")) {
+            this.category = category;
+        } else {
+            try {
+                throw new DriversLicenceException("Необходимо указать категорию водительского удостоверения" +
+                        " для водителя " + getFullName());
+            } catch (DriversLicenceException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
+
 
     public String getFullName() {
         return fullName;
@@ -44,6 +62,10 @@ public abstract class Driver {
 
     public boolean getDriversLicence() {
         return driversLicence;
+    }
+
+    public String getCategory() {
+        return category;
     }
 
     public void setDriversLicence(boolean driversLicence) throws CarLicenseException {
@@ -66,6 +88,29 @@ public abstract class Driver {
         }
     }
 
+    //    public void setCategory(String category) {
+//        this.category = category;
+//    }
+    public void setCategory(String category) {
+        if (category == null || category.isEmpty()) {
+            try {
+                throw new DriversLicenceException("Необходимо указать категорию водительского удостоверения" +
+                        " для водителя " + getFullName());
+            } catch (DriversLicenceException e) {
+                System.out.println(e.getMessage());
+            }
+        } else if (category.equals("B") || category.equals("C") || category.equals("D")) {
+            this.category = category;
+        } else {
+            try {
+                throw new DriversLicenceException("Необходимо указать категорию водительского удостоверения" +
+                        " для водителя " + getFullName());
+            } catch (DriversLicenceException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
     public abstract void startMoving();
 
     public abstract void stopMoving();
@@ -75,7 +120,7 @@ public abstract class Driver {
     @Override
     public String toString() {
         return "Ф.И.О." + fullName + ",наличие водительских прав " + driversLicence +
-                ", стаж вождения " + drivingExperience;
+                ", стаж вождения " + drivingExperience + " сатегория -" + getCategory();
     }
 
     @Override
@@ -93,3 +138,4 @@ public abstract class Driver {
 
     public abstract void refuelTheVehicle();
 }
+

@@ -6,12 +6,8 @@ import transport.Transport;
 
 public class DriverC<T extends Transport & Competition> extends Driver {
 
-    public DriverC() throws CarLicenseException {
-        super("", true, 0);
-    }
-
-    public DriverC(String fullName, boolean driversLicence, int drivingExperience) throws CarLicenseException {
-        super(fullName, driversLicence, drivingExperience);
+    public DriverC(String fullName, boolean driversLicence, int drivingExperience, String category) throws CarLicenseException {
+        super(fullName, driversLicence, drivingExperience, category);
     }
 
     @Override
