@@ -88,9 +88,7 @@ public abstract class Driver {
         }
     }
 
-    //    public void setCategory(String category) {
-//        this.category = category;
-//    }
+
     public void setCategory(String category) {
         if (category == null || category.isEmpty()) {
             try {

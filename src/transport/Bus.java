@@ -14,7 +14,7 @@ public class Bus extends Transport implements Competition {
     private SeatsCapacity seatsCapacity;
 
     public Bus(String brand, String model, double engineVolume, DriverD driver,
-                SeatsCapacity seatsCapacity) {
+               SeatsCapacity seatsCapacity) {
         super(brand, model, engineVolume, driver);
         this.seatsCapacity = seatsCapacity;
     }
