@@ -8,6 +8,8 @@ import mechanic.Mechanic;
 import transport.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main1 {
     public static void main(String[] args) throws CarLicenseException {
@@ -77,6 +79,8 @@ public class Main1 {
                 CarRepairSpecialization.SPECIFICATION_TRUCK);
         Mechanic arsenij = new Mechanic("Arsenij Kisilev", "Unicar",
                 CarRepairSpecialization.SPECIFICATION_UNIVERSAL);
+
+
         mechanics.add(leonid);
         mechanics.add(aleksej);
         mechanics.add(vladimir);
@@ -188,6 +192,28 @@ public class Main1 {
         kamaz4326.getInformationAboutDriverAndMechanic();
 
 
+        Map<Mechanic, Transport> transportMechanicMap1 = new HashMap<>();
+
+        transportMechanicMap1.put(leonid, bmwZ4);
+        transportMechanicMap1.put(aleksej, neoplanN5218);
+        transportMechanicMap1.put(vladimir, kamaz4326);
+
+        transportMechanicMap1.put(anton, audiR8);
+        transportMechanicMap1.put(maria, porsche911);
+        transportMechanicMap1.put(ksenia, mercedesBenzTravego);
+        transportMechanicMap1.put(elena, ivecoStralis);
+        transportMechanicMap1.put(anastasia, scaniaTouring);
+        transportMechanicMap1.put(gennadij, mitsubishiLancerEvolution);
+        transportMechanicMap1.put(matvej, scaniaTouring);
+        transportMechanicMap1.put(mark, hino500);
+        transportMechanicMap1.put(arsenij, dafX2);
+        for (Map.Entry<Mechanic, Transport> map : transportMechanicMap1.entrySet()) {
+            System.out.println(map.getKey() + " обслуживает автомобиль - " + map.getValue());
+        }
+        System.out.println(transportMechanicMap1);
+
+
     }
+
 }
 
