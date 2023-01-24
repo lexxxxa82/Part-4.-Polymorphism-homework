@@ -12,7 +12,7 @@ public abstract class Transport {
     private double engineVolume;
     protected ArrayList<Driver> drivers;
     protected ArrayList<Mechanic> mechanics;
-    //private int mechanicQuantity;
+
     private Driver driver;
 
     public Transport(String brand, String model, double engineVolume, Driver driver) {
@@ -124,7 +124,7 @@ public abstract class Transport {
     @Override
     public String toString() {
 
-        return "марка" + brand + ", модель" + model + ", объем двигателя" + engineVolume;
+        return "марка -" + brand + ", модель- " + model + ", объем двигателя -" + engineVolume;
     }
 
     @Override
