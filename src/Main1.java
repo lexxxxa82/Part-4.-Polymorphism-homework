@@ -7,7 +7,9 @@ import mechanic.CarRepairSpecialization;
 import mechanic.Mechanic;
 import transport.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main1 {
     public static void main(String[] args) throws CarLicenseException {
@@ -208,27 +210,8 @@ public class Main1 {
         for (Map.Entry<Mechanic, Transport> map : transportMechanicMap1.entrySet()) {
             System.out.println(map.getKey() + " обслуживает автомобиль - " + map.getValue());
         }
-        System.out.println("----------------------------------");
         System.out.println(transportMechanicMap1);
-        Set<Driver> driverSet = new HashSet<>();
-        driverSet.add(andrej);
-        driverSet.add(andrej);
-        driverSet.add(ekaterina);
-        driverSet.add(artjom);
-        driverSet.add(aleksandra);
-        driverSet.add(aleksandra);
-        driverSet.add(sergej);
-        driverSet.add(nina);
-        driverSet.add(arkadij);
-        driverSet.add(tatjana);
-        driverSet.add(ilja);
-        driverSet.add(irina);
-        driverSet.add(innokentij);
-        driverSet.add(elizaveta);
-        Iterator<Driver> iterator =driverSet.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+
 
     }
 
