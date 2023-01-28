@@ -207,7 +207,6 @@ public class Main1 {
         transportMechanicMap1.put(arsenij, dafX2);
         for (Map.Entry<Mechanic, Transport> map : transportMechanicMap1.entrySet()) {
             System.out.println(map.getKey() + " обслуживает автомобиль - " + map.getValue());
-        }
         System.out.println("----------------------------------------------------");
         System.out.println(transportMechanicMap1);
         System.out.println(transportMechanicMap1);
@@ -226,15 +225,11 @@ public class Main1 {
         driverSet.add(innokentij);
         driverSet.add(innokentij);
         driverSet.add(elizaveta);
-
         Iterator<Driver> iterator = driverSet.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
-
         }
     }
-
-
 }
 
 
