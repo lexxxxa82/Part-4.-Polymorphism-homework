@@ -1,10 +1,12 @@
 package Driver;
 
 import exception.CarLicenseException;
+import transport.Competition;
+import transport.Transport;
 
 import java.util.Objects;
 
-public abstract class Driver {
+public abstract class Driver<T extends Transport & Competition>  {
     private String fullName;
     private boolean driversLicence;
     private int drivingExperience;
