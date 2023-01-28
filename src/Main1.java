@@ -207,30 +207,30 @@ public class Main1 {
         transportMechanicMap1.put(arsenij, dafX2);
         for (Map.Entry<Mechanic, Transport> map : transportMechanicMap1.entrySet()) {
             System.out.println(map.getKey() + " обслуживает автомобиль - " + map.getValue());
-        }
-        System.out.println("----------------------------------");
+        System.out.println("----------------------------------------------------");
         System.out.println(transportMechanicMap1);
-        Set<Mechanic> mechanics1 = new HashSet<>();
-        mechanics1.add(leonid);
-        mechanics1.add(leonid);
-        mechanics1.add(aleksej);
-        mechanics1.add(vladimir);
-        mechanics1.add(vladimir);
-        mechanics1.add(anton);
-        mechanics1.add(maria);
-        mechanics1.add(ksenia);
-        mechanics1.add(elena);
-        mechanics1.add(anastasia);
-        mechanics1.add(gennadij);
-        mechanics1.add(matvej);
-        mechanics1.add(mark);
-        mechanics1.add(arsenij);
-        Iterator<Mechanic> iterator = mechanics1.iterator();
+        System.out.println(transportMechanicMap1);
+        Set<Driver> driverSet = new HashSet<>();
+        driverSet.add(andrej);
+        driverSet.add(ekaterina);
+        driverSet.add(artjom);
+        driverSet.add(artjom);
+        driverSet.add(aleksandra);
+        driverSet.add(sergej);
+        driverSet.add(nina);
+        driverSet.add(arkadij);
+        driverSet.add(tatjana);
+        driverSet.add(ilja);
+        driverSet.add(irina);
+        driverSet.add(innokentij);
+        driverSet.add(innokentij);
+        driverSet.add(elizaveta);
+        Iterator<Driver> iterator = driverSet.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
-
     }
-
 }
+
+
 
